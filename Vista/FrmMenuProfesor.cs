@@ -37,11 +37,13 @@ namespace Vista
             cb_seleccionar_nota.SelectedIndex = 0;
         }
 
+        /// <summary>
+        /// Trae la lista de materias inscriptas.
+        /// </summary>
         private void TraerListaMateriasInscriptas()
         {
             foreach (var materia in BaseDatos.Materias)
             {
-
                 if (materia.Profesor == (Profesor)usuarioProfesor)
                 {
                     listaMaterias.Add(materia);
@@ -67,7 +69,10 @@ namespace Vista
             }
         }
 
-
+        /// <summary>
+        /// Construye un string de fecha de examen.
+        /// </summary>
+        /// <returns></returns> Retorna el string construido.
         public string ConstuirFechaExamen()
         {
             string retorno = "  ";
@@ -109,6 +114,9 @@ namespace Vista
             MostrarNotaAlumno();
         }
 
+        /// <summary>
+        /// Muestra la nota actual del alumno.
+        /// </summary>
         private void MostrarNotaAlumno()
         {
             int nota = ((Materia)cb_menuProfe_materia.SelectedItem).MostrarNotaAlumno((Alumno)cb_seleccionar_alumno.SelectedItem);

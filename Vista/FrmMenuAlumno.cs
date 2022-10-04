@@ -65,6 +65,9 @@ namespace Vista
 
         }
 
+        /// <summary>
+        /// Chequea si es posible la inscripcion del alumno y si es asi lo hace.
+        /// </summary>
         public void ChequearInscripcion()
         {
             if (int.TryParse(txb_menuAlumno_Inscripcion.Text, out int idAux))
@@ -89,6 +92,9 @@ namespace Vista
             }
         }
 
+        /// <summary>
+        /// Trae la lista de las materias ya inscriptas por el alumno.
+        /// </summary>
         private void TraerListaMateriasInscriptas()
         {
             foreach (var id in ((Alumno)usuarioAlumno).Materias)

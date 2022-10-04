@@ -71,6 +71,10 @@ namespace Vista
             }
         }
 
+        /// <summary>
+        /// Validacion de datos de los campos del formulario.
+        /// </summary>
+        /// <returns></returns> false si estan incompletos | true si estan completos.
         private bool ValidarDatos()
         {
             bool retorno = false;
@@ -89,6 +93,10 @@ namespace Vista
             return retorno;
         }
 
+        /// <summary>
+        /// Registracion del usuario.
+        /// </summary>
+        /// <returns></returns>
         private bool RegistrarUsuario()
         {
             bool retorno = true;

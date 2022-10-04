@@ -37,6 +37,9 @@ namespace Vista
             }
         }
 
+        /// <summary>
+        /// Construye una materia con los datos proporcionados por el usuario.
+        /// </summary>
         private void ConstruirMateria()
         {
             EMateria eMateria = (EMateria)cb_altaMaterias_materia.SelectedIndex;
@@ -44,6 +47,10 @@ namespace Vista
             materiaAux = new Materia(eMateria, BaseDatos.AsignarCuatrimestre(eMateria), profeAux, BaseDatos.AsignarCorrelatividad(eMateria));
         }
 
+        /// <summary>
+        /// Valida que todos los campos esten completos.
+        /// </summary>
+        /// <returns></returns> false = si no lo estan | true si lo estan.
         private bool ValidarDatos()
         {
             bool retorno = true;
