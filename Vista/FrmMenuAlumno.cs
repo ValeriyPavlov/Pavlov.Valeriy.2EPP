@@ -62,7 +62,6 @@ namespace Vista
             cb_menuAlumno_asistencia.DataSource = null;
             cb_menuAlumno_asistencia.DataSource = materiaAux;
             cb_menuAlumno_asistencia.DisplayMember = "Nombre";
-
         }
 
         /// <summary>

@@ -41,6 +41,15 @@ namespace Vista
 
         private void FrmMenuAdmin_Load(object sender, EventArgs e)
         {
+
+            // Punto Examen
+            cb_seleccionarMateria.DataSource = BaseDatos.Materias;
+            cb_seleccionarMateria.DisplayMember = "Nombre";
+            cb_seleccionarAlumno.DataSource = BaseDatos.Alumnos;
+            cb_seleccionarAlumno.DisplayMember = "NombreCompleto";
+
+
+
             dgv_admin_usuarios.DataSource = BaseDatos.Usuarios;
             dgv_admin_materias.DataSource = BaseDatos.Materias;
             dgv_admin_materias.Columns["Profesor"].Visible = false;
@@ -93,6 +102,28 @@ namespace Vista
             cb_menuAdmin_materias.DisplayMember = "Nombre";
             cb_menuAdmin_seleccionAlumno.DataSource = ((Materia)cb_menuAdmin_materias.SelectedItem).AlumnosLista;
             cb_menuAdmin_seleccionAlumno.DisplayMember = "NombreCompleto";
+        }
+
+        private void btn_inscribirAlumno_Click(object sender, EventArgs e)
+        {
+            ChequearInscripcion();
+        }
+
+        // PUNTO EXAMEN
+        public void ChequearInscripcion()
+        {
+            int auxId = ((Materia)cb_seleccionarMateria.SelectedItem).Id;
+            foreach (var materia in BaseDatos.Materias)
+            {
+                if (materia.Id == auxId)
+                {
+                    if (materia.AgregarAlumno((Alumno)cb_seleccionarAlumno.SelectedItem))
+                    {
+                        MessageBox.Show("Se inscribio con exito!");
+                        ((Alumno)cb_seleccionarAlumno.SelectedItem).InscribirseMateria(auxId);
+                    }
+                }
+            }
         }
     }
 }

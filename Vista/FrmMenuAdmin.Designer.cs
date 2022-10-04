@@ -42,6 +42,9 @@
             this.dgv_estadoMateriasAlumno = new System.Windows.Forms.DataGridView();
             this.lbl_estadoAlumno = new System.Windows.Forms.Label();
             this.lbl_estadoActualA = new System.Windows.Forms.Label();
+            this.btn_inscribirAlumno = new System.Windows.Forms.Button();
+            this.cb_seleccionarAlumno = new System.Windows.Forms.ComboBox();
+            this.cb_seleccionarMateria = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_admin_usuarios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_admin_materias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_estadoMateriasAlumno)).BeginInit();
@@ -59,7 +62,7 @@
             // 
             // btn_menuAdmin_salir
             // 
-            this.btn_menuAdmin_salir.Location = new System.Drawing.Point(12, 598);
+            this.btn_menuAdmin_salir.Location = new System.Drawing.Point(12, 764);
             this.btn_menuAdmin_salir.Name = "btn_menuAdmin_salir";
             this.btn_menuAdmin_salir.Size = new System.Drawing.Size(75, 63);
             this.btn_menuAdmin_salir.TabIndex = 2;
@@ -185,12 +188,41 @@
             this.lbl_estadoActualA.TabIndex = 17;
             this.lbl_estadoActualA.Text = "Estado actual del alumno:";
             // 
+            // btn_inscribirAlumno
+            // 
+            this.btn_inscribirAlumno.Location = new System.Drawing.Point(559, 692);
+            this.btn_inscribirAlumno.Name = "btn_inscribirAlumno";
+            this.btn_inscribirAlumno.Size = new System.Drawing.Size(75, 75);
+            this.btn_inscribirAlumno.TabIndex = 18;
+            this.btn_inscribirAlumno.Text = "Inscribir Alumno";
+            this.btn_inscribirAlumno.UseVisualStyleBackColor = true;
+            this.btn_inscribirAlumno.Click += new System.EventHandler(this.btn_inscribirAlumno_Click);
+            // 
+            // cb_seleccionarAlumno
+            // 
+            this.cb_seleccionarAlumno.FormattingEnabled = true;
+            this.cb_seleccionarAlumno.Location = new System.Drawing.Point(411, 692);
+            this.cb_seleccionarAlumno.Name = "cb_seleccionarAlumno";
+            this.cb_seleccionarAlumno.Size = new System.Drawing.Size(121, 23);
+            this.cb_seleccionarAlumno.TabIndex = 19;
+            // 
+            // cb_seleccionarMateria
+            // 
+            this.cb_seleccionarMateria.FormattingEnabled = true;
+            this.cb_seleccionarMateria.Location = new System.Drawing.Point(411, 730);
+            this.cb_seleccionarMateria.Name = "cb_seleccionarMateria";
+            this.cb_seleccionarMateria.Size = new System.Drawing.Size(121, 23);
+            this.cb_seleccionarMateria.TabIndex = 20;
+            // 
             // FrmMenuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(787, 675);
+            this.ClientSize = new System.Drawing.Size(787, 839);
+            this.Controls.Add(this.cb_seleccionarMateria);
+            this.Controls.Add(this.cb_seleccionarAlumno);
+            this.Controls.Add(this.btn_inscribirAlumno);
             this.Controls.Add(this.lbl_estadoActualA);
             this.Controls.Add(this.lbl_estadoAlumno);
             this.Controls.Add(this.dgv_estadoMateriasAlumno);
@@ -231,5 +263,8 @@
         private System.Windows.Forms.DataGridView dgv_estadoMateriasAlumno;
         private System.Windows.Forms.Label lbl_estadoAlumno;
         private System.Windows.Forms.Label lbl_estadoActualA;
+        private System.Windows.Forms.Button btn_inscribirAlumno;
+        private System.Windows.Forms.ComboBox cb_seleccionarAlumno;
+        private System.Windows.Forms.ComboBox cb_seleccionarMateria;
     }
 }
